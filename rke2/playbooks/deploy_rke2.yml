@@ -1,6 +1,6 @@
 ---
 - name: Deploy RKE2
-  hosts: node
+  hosts: rke2
   become: true
   roles:
-     - role: lablabs.rke2
+     - role: ansible-role-rke2
