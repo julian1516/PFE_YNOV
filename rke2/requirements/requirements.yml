@@ -1,0 +1,5 @@
+---
+roles:
+  - src: https://github.com/lablabs/ansible-role-rke2.git
+    scm: git
+    version: v1.28.0

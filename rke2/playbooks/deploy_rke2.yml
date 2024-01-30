@@ -1,0 +1,6 @@
+---
+- name: Deploy RKE2
+  hosts: node
+  become: true
+  roles:
+     - role: lablabs.rke2

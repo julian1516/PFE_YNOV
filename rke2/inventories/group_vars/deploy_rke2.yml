@@ -1,0 +1,3 @@
+---
+# The node type - server or agent
+rke2_type: server
