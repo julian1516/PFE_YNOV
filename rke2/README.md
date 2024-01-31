@@ -12,6 +12,7 @@ Role Variables
 
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
+```
 ---
 # The node type - server or agent
 rke2_type: server
@@ -35,6 +36,8 @@ rke2_api_ip: "192.168.1.78"
 # RKE2 version
 rke2_version: v1.29.0+rke2r1
 
+```
+
 Dependencies
 ------------
 
@@ -45,16 +48,19 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
+```
   ---
 - name: Deploy RKE2
   hosts: k8s_cluster
   become: true
   roles:
      - role: ansible-role-rke2
-
+```
 Example Command
 ----------------
+```
 ansible-playbook playbooks/deploy_rke2.yml -i inventories/hosts -u kube --ask-become-pass
+```
 
 
 License
