@@ -19,4 +19,4 @@ rke2_ha_mode_kubevip: false
 rke2_api_ip: "192.168.1.78"
 
 # RKE2 version
-rke2_version: v1.29.0+rke2r1
+rke2_version: v1.27.9+rke2r1
