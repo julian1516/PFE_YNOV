@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 5Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: grafana-pvc
+    namespace: grafana
+  hostPath:
+    path: /mnt/data/grafana
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem

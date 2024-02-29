@@ -23,6 +23,10 @@ spec:
       labels:
         app: grafana
     spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
       containers:
         - image: docker.io/grafana/grafana:latest
           imagePullPolicy: Always
@@ -30,8 +34,10 @@ spec:
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+          volumeMounts:
+            - mountPath: /var/lib/grafana
+              name: grafana-pv
+      volumes:
+        - name: grafana-pv
+          persistentVolumeClaim:
+            claimName: grafana-pvc
